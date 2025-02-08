@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Strona z przepisami</h1>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Wyszukaj po nazwie lub składniku" oninput="searchRecipes()">
+        <select id="difficulty" onchange="filterRecipes()">
+            <option value="">Wybierz trudność</option>
+            <option value="Easy">Łatwe</option>
+            <option value="Medium">Średnie</option>
+            <option value="Hard">Trudne</option>
+        </select>
+    </div>
+
+    <div id="recipe-list" class="recipe-list"></div>
+
+    <div id="recipe-detail" class="recipe-detail">
+        <h2>Szczegóły przepisu</h2>
+        <p id="recipe-name"></p>
+        <p id="recipe-time"></p>
+        <h3>Składniki</h3>
+        <div id="ingredients-list"></div>
+        <button onclick="backToList()">Wróć do listy</button>
+    </div>
+
+    <div id="add-recipe-form">
+        <h2>Dodaj nowy przepis</h2>
+        <input type="text" id="name" placeholder="Nazwa dania" required>
+        <input type="text" id="time" placeholder="Czas" required>
+        <select id="difficulty-select">
+            <option value="Easy">Łatwe</option>
+            <option value="Medium">Średnie</option>
+            <option value="Hard">Trudne</option>
+        </select>
+        <div id="ingredients-container">
+            <h3>Wybierz składniki:</h3>
+            <ul id="ingredients-list-select"></ul>
+        </div>
+        <button onclick="addRecipe()">Dodaj przepis</button>
+    </div>
+
+    <div id="add-ingredient-form">
+        <h2>Dodaj nowy składnik</h2>
+        <input type="text" id="ingredient-name" placeholder="Nazwa składnika" required>
+        <button onclick="addIngredient()">Dodaj składnik</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
